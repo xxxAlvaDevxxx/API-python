@@ -1,0 +1,10 @@
+{
+  "patients": [
+    {
+      "creation_date": 1708896950.2421227,
+      "last_update": 1708896950.2421227,
+      "full_name": "Doe,Joe",
+      "birthday": "02/01/2000"
+    }
+  ]
+}
