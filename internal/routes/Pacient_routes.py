@@ -12,7 +12,7 @@ def create_patient():
     new_patient = Patient()
     
     # call method create and asignation to values
-    create = new_patient.create(full_name="Doe,Joe",birthday="02/01/2000")
+    ok = new_patient.create(full_name="Doe,Joe",birthday="02/01/2000")
 
     # filename json
     filename = "../db.json"
@@ -47,14 +47,19 @@ def create_patient():
     print(f"Los datos se han guardado en el archivo '{filename}'.")
 
     # creation check
-    if create is not True:
-        return {"message": "Error in Creation"}
+    if ok is not True:
+        return {"message": "Creation Error"}
     return {"message": "Creation Sucesfully"}
 
 # api route patient read
-@api.route("/api/patient/read")
-def read_patient():
-    pass
+@api.route("/api/patient/read/<id>")
+def read_patient(id):
+    patient = Patient()
+    ok, _patient = patient.read(id)
+    if ok is not True:
+        return {"message": "Reading Error"}
+    return {"message": "Reading sucesfully", "patient": _patient}
+    
 
 # api route patient update
 @api.route("/api/patient/update")

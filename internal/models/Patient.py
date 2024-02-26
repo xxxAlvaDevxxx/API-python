@@ -1,4 +1,5 @@
 from time import time
+import json
 
 class Patient:
     _id = 0
@@ -26,10 +27,22 @@ class Patient:
         except:
             return False
 
-    def read(self):
+    def read(self, _id):
+        # filename json
+        filename = "../db.json"
         try:
-        # code...
-            return True
+            # read file json
+            with open(filename, "r") as file_json:
+                # converts the data from the json file into an object that Python handles
+                data = json.load(file_json)
+            # if the data has the key patients
+            if "patients" in data:
+                # search all patients, which one has the id being searched
+                for _patient in data["patients"]:
+                    if _patient["_id"] == int(_id):
+                        return True, _patient
+            else:
+                return False, None
         except:
             return False
         
