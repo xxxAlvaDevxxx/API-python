@@ -1,5 +1,30 @@
-from time import time
+import datetime
 import json
+
+filename = "./db.json"
+
+def readDB():
+    print("Load existing data (if file already exists) ", filename)
+    try:
+        with open(filename, "r") as file_json:
+            data = json.load(file_json)
+            if "patients" not in data:
+                print("If the key 'patients' does not exist")
+                return {"patients":[]}
+            return data
+    except FileNotFoundError:
+        print("If the file does not exist, create an empty dictionary")
+        return {"patients":[]}
+
+def writeDB(data):
+    try:
+        print("Write the dictionary to a JSON file: ", filename)
+        with open(filename, "w") as file_json:
+            json.dump(data, file_json, indent=4)
+        return True
+    except:
+        return False
+    
 
 class Patient:
     _id = 0
@@ -9,53 +34,73 @@ class Patient:
     discharge_date = ""
     creation_date = ""
     last_update = ""
-    pathologies = []
-    
-    def create(self, full_name, birthday, internment_now = None, pathologies = None):
+    pathologies = ""
+    status = 0
+    def create(self):
+        print("model patient create")
         try:
-            # join the parts
-            self.creation_date = time()
-            self.last_update = self.creation_date
-            self.full_name = full_name
-            self.birthday = birthday
-            if internment_now is not None:
-                self.internment_date = self.creation_date
-            if pathologies is not None:
-                self.pathologies = pathologies
-
-            return True
-        except:
-            return False
-
-    def read(self, _id):
-        # filename json
-        filename = "../db.json"
-        try:
-            # read file json
-            with open(filename, "r") as file_json:
-                # converts the data from the json file into an object that Python handles
-                data = json.load(file_json)
-            # if the data has the key patients
-            if "patients" in data:
-                # search all patients, which one has the id being searched
-                for _patient in data["patients"]:
-                    if _patient["_id"] == int(_id):
-                        return True, _patient
+            existing_data = readDB()
+            self._id = len(existing_data["patients"])+1
+            print("model patient create - set id: ", self._id)
+            print("model patient create - extracting attributes of class")
+            dict_attributes = self.__dict__
+            print("model patient create - New data you want to add")
+            new_data = json.dumps(dict_attributes,indent=4) # XXXXXXXXXXX
+            print("model patient create - Add the new data to the patient list")
+            if "patients" in existing_data:
+                existing_data["patients"].append(json.loads(new_data))
             else:
-                return False, None
+                existing_data["patients"] = [new_data]
+            return writeDB(existing_data)
         except:
             return False
-        
-    def update(self):
+    def read_all(self):
+        print("model patient read_all")
         try:
-        # code...
-            return True
+            return True, readDB()
         except:
-            return False
-    
-    def delete(self):
+            return False, None
+    def read(self, _id:int):
+        print("model patient read")
         try:
-        # code...
-            return True
+            data = readDB()
+            print("search all patients, which one has the id being searched")
+            for patient in data["patients"]:
+                if patient["_id"] == _id:
+                    return True, patient
+        except:
+            return False, None
+    def update(self,_id:int):
+        print("model patient update")
+        try:
+            data = readDB()
+            print("model patient update - search all patients, which one has the id being searched")
+            for patient in data["patients"]:
+                if patient["_id"] == _id:
+                    print("model patient update - id found: ", _id)
+                    print("model patient update- join the parts")
+                    patient["_id"] = _id
+                    patient["full_name"] = self.full_name
+                    patient["birthday"] = self.birthday
+                    patient["last_update"] = self.last_update
+                    if self.internment_date is not "":
+                        patient["internment_date"] = self.internment_date
+                    if self.pathologies is not "":
+                        patient["pathologies"] = self.pathologies
+                    if self.status is not 0:
+                        patient["status"] = self.status
+                    return writeDB(data), patient
+        except:
+            return False, None
+    def delete(self, _id:int):
+        print("model patient delete")
+        try:
+            data = readDB()
+            print("model patient delete - search all patients, which one has the id being searched")
+            for patient in data["patients"]:
+                if patient["_id"] == _id:
+                    print("model patient delete - id found: ", _id)
+                    patient["status"] = 2
+                    return writeDB(data)
         except:
             return False

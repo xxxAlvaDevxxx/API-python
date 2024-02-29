@@ -1,10 +1,79 @@
 {
-  "patients": [
-    {
-      "creation_date": 1708896950.2421227,
-      "last_update": 1708896950.2421227,
-      "full_name": "Doe,Joe",
-      "birthday": "02/01/2000"
-    }
-  ]
+    "patients": [
+        {
+            "full_name": "jose",
+            "birthday": "5/2/2010",
+            "status": 1,
+            "creation_date": "Wednesday, February 28, 2024 16:51:30",
+            "last_update": "Thursday, February 29, 2024 00:51:23",
+            "_id": 1,
+            "internment_date": "Thursday, February 29, 2024 00:47:35",
+            "pathologies": "[1,2,3]"
+        },
+        {
+            "full_name": "AM,DT",
+            "birthday": "5/2/2020",
+            "status": 1,
+            "creation_date": "Wednesday, February 28, 2024 16:52:33",
+            "last_update": "Wednesday, February 28, 2024 16:52:33",
+            "_id": 2
+        },
+        {
+            "full_name": "maria",
+            "birthday": "5/2/2010",
+            "status": 1,
+            "creation_date": "Wednesday, February 28, 2024 16:54:39",
+            "last_update": "Wednesday, February 28, 2024 16:54:39",
+            "_id": 3
+        },
+        {
+            "full_name": "maria",
+            "birthday": "5/2/2010",
+            "pathologies": "[1,2,3]",
+            "status": 1,
+            "creation_date": "Wednesday, February 28, 2024 16:59:52",
+            "last_update": "Wednesday, February 28, 2024 16:59:52",
+            "_id": 4
+        },
+        {
+            "full_name": "maria",
+            "birthday": "5/2/2010",
+            "internment_date": "Wednesday, February 28, 2024 17:00:20",
+            "pathologies": "[1,2,3]",
+            "status": 1,
+            "creation_date": "Wednesday, February 28, 2024 17:00:20",
+            "last_update": "Wednesday, February 28, 2024 17:00:20",
+            "_id": 5
+        },
+        {
+            "full_name": "maria",
+            "birthday": "5/2/2010",
+            "internment_date": "Wednesday, February 28, 2024 18:15:54",
+            "pathologies": "[1,2,3]",
+            "status": 1,
+            "creation_date": "Wednesday, February 28, 2024 18:15:54",
+            "last_update": "Wednesday, February 28, 2024 18:15:54",
+            "_id": 6
+        },
+        {
+            "full_name": "maria",
+            "birthday": "5/2/2010",
+            "internment_date": "Wednesday, February 28, 2024 23:32:27",
+            "pathologies": "[1,2,3]",
+            "status": 1,
+            "creation_date": "Wednesday, February 28, 2024 23:32:27",
+            "last_update": "Wednesday, February 28, 2024 23:32:27",
+            "_id": 7
+        },
+        {
+            "full_name": "jose",
+            "birthday": "5/2/2010",
+            "internment_date": "Wednesday, February 28, 2024 23:57:11",
+            "pathologies": "[1,2,3]",
+            "status": 1,
+            "creation_date": "Wednesday, February 28, 2024 23:57:11",
+            "last_update": "Wednesday, February 28, 2024 23:57:11",
+            "_id": 8
+        }
+    ]
 }
