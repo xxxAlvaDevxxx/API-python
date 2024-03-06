@@ -45,7 +45,7 @@ class Patient:
             print("model patient create - extracting attributes of class")
             dict_attributes = self.__dict__
             print("model patient create - New data you want to add")
-            new_data = json.dumps(dict_attributes,indent=4) # XXXXXXXXXXX
+            new_data = json.dumps(dict_attributes,indent=4)
             print("model patient create - Add the new data to the patient list")
             if "patients" in existing_data:
                 existing_data["patients"].append(json.loads(new_data))
@@ -64,9 +64,10 @@ class Patient:
         print("model patient read")
         try:
             data = readDB()
-            print("search all patients, which one has the id being searched")
+            print("model patient read - search all patients, which one has the id being searched")
             for patient in data["patients"]:
                 if patient["_id"] == _id:
+                    print("model patient read - patient found with id: ",_id)
                     return True, patient
         except:
             return False, None
@@ -78,7 +79,7 @@ class Patient:
             for patient in data["patients"]:
                 if patient["_id"] == _id:
                     print("model patient update - id found: ", _id)
-                    print("model patient update- join the parts")
+                    print("model patient update - join the parts")
                     patient["_id"] = _id
                     patient["full_name"] = self.full_name
                     patient["birthday"] = self.birthday
@@ -101,6 +102,7 @@ class Patient:
                 if patient["_id"] == _id:
                     print("model patient delete - id found: ", _id)
                     patient["status"] = 2
+                    print("model patient delete - set status: ", patient["status"])
                     return writeDB(data)
         except:
             return False

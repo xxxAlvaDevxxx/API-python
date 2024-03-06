@@ -9,7 +9,7 @@ service = ServicePacient()
 
 @api.route("/api/patient/create")
 def create_patient():
-    print("api route patient create")
+    print("\napi route patient create")
     ok = service.create()
     print("api route patient create - creation check")
     if ok is not True:
@@ -18,7 +18,7 @@ def create_patient():
 
 @api.route('/api/patient/read_all')
 def read_all_patient():
-    print("api route patient read_all")
+    print("\napi route patient read_all")
     ok, patients = service.read_all()
     print("api route patient read_all - creation check")
     if ok is not True:
@@ -27,7 +27,7 @@ def read_all_patient():
 
 @api.route("/api/patient/read/<id>")
 def read_patient(id):
-    print("api route patient read")
+    print("\napi route patient read")
     ok, patient = service.read(id)
     print("api route patient read - creation check")
     if ok is not True:
@@ -36,7 +36,7 @@ def read_patient(id):
 
 @api.route("/api/patient/update")
 def update_patient():
-    print("api route patient update")
+    print("\napi route patient update")
     ok, patient = service.update()
     print("api route patient update - creation check")
     if ok is not True:
@@ -45,7 +45,7 @@ def update_patient():
 
 @api.route("/api/patient/delete/<id>")
 def delete_patient(id):
-    print("api route patient delete")
+    print("\napi route patient delete")
     ok = service.delete(id)
     print("api route patient update - creation check")
     if ok is not True:

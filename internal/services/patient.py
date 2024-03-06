@@ -11,14 +11,19 @@ def getArgsAndSetAttributes(log):
     patient = Patient()
     print(f"service patient {log} - attributes assignation")
     if args.get("full_name"):
+        print(f"service patient {log} - assignation full_name: ",args.get("full_name"))
         patient.full_name = args.get("full_name")
     if args.get("birthday"):
+        print(f"service patient {log} - assignation birthday: ",args.get("birthday"))
         patient.birthday = args.get("birthday")
     if args.get("intern_now") == "true":
+        print(f"service patient {log} - assignation intern_now: ",datetime.now().strftime("%A, %B %d, %Y %H:%M:%S"))
         patient.internment_date = datetime.now().strftime("%A, %B %d, %Y %H:%M:%S")
     if args.get("pathologies"):
+        print(f"service patient {log} - assignation pathologies: ",args.get("pathologies"))
         patient.pathologies = args.get("pathologies")
     if args.get("status"):
+        print(f"service patient {log} - assignation status: ",args.get("status"))
         patient.status = int(args.get("status"))
     return patient, args
 
@@ -26,7 +31,7 @@ def getArgsAndSetAttributes(log):
 class ServicePacient:
     def create(self):
         print("service patient create")
-        patient = getArgsAndSetAttributes("create")
+        patient, _ = getArgsAndSetAttributes("create")
         if patient.status == 0:
             patient.status = 1
         patient.creation_date = datetime.now().strftime("%A, %B %d, %Y %H:%M:%S")
@@ -46,7 +51,7 @@ class ServicePacient:
         print("service patient update")
         patient, args = getArgsAndSetAttributes("update")
         patient.last_update = datetime.now().strftime("%A, %B %d, %Y %H:%M:%S")
-        return patient.update(int(args.get("id")))
+        return patient.update(int(args.get("_id")))
     def delete(self, _id):
         print("service patient delete")
         print("service patient delete - call class Patient")
