@@ -1,5 +1,11 @@
 import { $2 } from "./Element/Element";
 import App from "./app";
+import language from "./language";
+
+const nl = navigator.language;
+const jsonForLanguage = language[nl === "es" ? "es" : "en"];
+document.title = jsonForLanguage.header.title
+
 // call root element
 let main = document.querySelector("main")
 // Exist checking
