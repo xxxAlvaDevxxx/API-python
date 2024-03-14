@@ -1,6 +1,5 @@
 import { $Select, $Input, $Button, $ } from "../Element/Element";
 import { iSearcher } from "../Patient/ports";
-import { styleReadSearcherBtn, styleReadSearcher } from "../Patient/styles";
 import language from "../language";
 import { handlerChange, handlerSearcherCleanData } from "./Handlers/Change";
 import { handlerFetchSearcherRead } from "./Handlers/Fetch";
@@ -38,18 +37,15 @@ export default class Searcher extends $ implements iSearcher {
     jFLSearch.buttons[1],
     (ctx) => handlerSearcherCleanData(this, ctx, data),
     () => {}
-  )
-    .setStyle(styleReadSearcherBtn)
-    .setStyle({ background: "#f005" });
+  ).setStyle({backgroundColor:"#ff000061"});
   $btnSendData = new $Button(
     {},
     jFLSearch.buttons[0],
     (ctx) => handlerFetchSearcherRead(this, ctx, data),
     () => {}
-  ).setStyle(styleReadSearcherBtn);
+  );
   constructor() {
-    super("div", {});
-    this.setStyle(styleReadSearcher);
+    super("article", { id: "Searcher" });
     this.addChildren(this.$typeSearch, this.$value, this.$btnSendData);
   }
 }

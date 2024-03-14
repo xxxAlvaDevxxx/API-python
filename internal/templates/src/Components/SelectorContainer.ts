@@ -1,12 +1,11 @@
 import $BtnActions from "./BtnActions";
 import { $ } from "../Element/Element";
 import language from "../language";
-import { styleSelectorContainer } from "../Patient/styles";
 import { iSelectorContainer } from "../Patient/ports";
 
-const nl = navigator.language
-const jsonForLanguage = language[nl==="es"?"es":"en"]
-const jFLNav = jsonForLanguage.nav 
+const nl = navigator.language;
+const jsonForLanguage = language[nl === "es" ? "es" : "en"];
+const jFLNav = jsonForLanguage.nav;
 
 // selector container that present the buttons that display windows
 class SelectorContainer extends $ implements iSelectorContainer {
@@ -20,8 +19,7 @@ class SelectorContainer extends $ implements iSelectorContainer {
     value: "btnReadAll",
   });
   constructor() {
-    super("article", {});
-    this.setStyle(styleSelectorContainer);
+    super("article", { id: "SelectorContainer" });
     this.addChildren(this.$btnCreate, this.$btnRead, this.$btnReadAll);
   }
 }

@@ -1,15 +1,13 @@
-import { handlerChangeToButtonUpdate, handlerLabelsAndInputs } from "../Components/Handlers/Change";
+import {
+  handlerChangeToButtonUpdate,
+  handlerLabelsAndInputs,
+} from "../Components/Handlers/Change";
 import {
   handlerFetchDelete,
   handlerFetchUpdate,
 } from "../Components/Handlers/Fetch";
 import { $, $Button, $LabelAndInput } from "../Element/Element";
 import language from "../language";
-import {
-  stylePatient,
-  stylePatientBtn,
-  stylePatientContainerBtns,
-} from "./styles";
 
 const nl = navigator.language;
 const jsonForLanguage = language[nl === "es" ? "es" : "en"];
@@ -62,31 +60,28 @@ export default class Patient extends $ {
     "Eliminar",
     (ctx) => handlerFetchDelete(this, ctx),
     () => {}
-  ).setStyle(stylePatientBtn);
+  );
   $btnSendData = new $Button(
     {},
     "Guardar",
     (ctx) => handlerFetchUpdate(this, ctx),
     () => {}
-  ).setStyle(stylePatientBtn);
+  );
   $btnUpdate = new $Button(
     {},
     "Actualizar",
     (_ctx) => handlerChangeToButtonUpdate(this),
     () => {}
-  ).setStyle(stylePatientBtn);
-  $containerBtns = new $("div", { class: "containerBtns-Patient" }).setStyle(
-    stylePatientContainerBtns
   );
+  $containerBtns = new $("div", { class: "containerBtns" });
   patient: patient;
   constructor(patient: patient) {
     super("article", { class: "patient" });
     this.patient = patient;
-    this.setStyle(stylePatient);
     this.render();
   }
   render() {
-    handlerLabelsAndInputs(this)
+    handlerLabelsAndInputs(this);
     this.$containerBtns.addChildren(this.$btnUpdate, this.$btnDelete);
     this.onDblClick(
       {

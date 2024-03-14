@@ -1,0 +1,184 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --patient-container-box-shadow: 0 0 3px #0007;
+  --patient-container-border-radius: 0.4rem;
+  --patient-container-padding: 1em;
+  --patient-container-button-border-radius: 0.2rem;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    /* --base-background: #fff; */
+    --base-background: #ffffffdb;
+    --patient-container-background: #00000008;
+    --selector-container-button-background: #00000005;
+    --patient-container-button-background: #0000000a;
+    --patient-container-button-background-red: #ff000061;
+    --patient-container-input-background: #00000014;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  * {
+    color: #fff;
+  }
+  :root {
+    --base-background: #000000db;
+    --selector-container-background: #ffffff08;
+    --selector-container-button-background: #fdfdfd17;
+    --patient-container-background: #ffffff08;
+    --patient-container-button-background: #ffffff0a;
+    --patient-container-button-background-red: #ff000061;
+    --patient-container-input-background: #ffffff14;
+  }
+}
+
+body {
+  background-color: var(--base-background);
+}
+
+#app {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  overflow: hidden;
+  gap: 3em;
+  padding-top: 0.4%;
+}
+
+#SelectorContainer {
+  background-color: var(--selector-container-background);
+  box-shadow: 0 0 3px #00000070;
+  border-radius: 0.4rem;
+  display: flex;
+  justify-content: center;
+  width: 99%;
+}
+
+#SelectorContainer > button {
+  background-color: var(--selector-container-button-background);
+  box-shadow: 0 0 3px #00000040;
+  border: 0;
+  padding: 1em;
+  margin: 0.5em;
+  border-radius: 0.2rem;
+}
+
+#PatientCreate {
+  width: min(100%, 600px);
+  height: 60%;
+  background: var(--patient-container-background);
+  box-shadow: var(--patient-container-box-shadow);
+  border-radius: var(--patient-container-border-radius);
+  padding: var(--patient-container-padding);
+  display: grid;
+}
+
+#PatientCreate > div {
+  align-self: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 4em;
+}
+
+input {
+  background: var(--patient-container-input-background);
+  border: 0;
+  border-radius: 0.2rem;
+  padding: 0.2em;
+}
+
+#PatientCreate > button {
+  width: 80%;
+  margin: auto;
+  padding: 1em;
+  border: 0;
+  border-radius: 0.2rem;
+  box-shadow: 0 0 3px #0008;
+  background-color: var(--patient-container-button-background);
+}
+
+#PatientRead {
+  width: min(100%, 600px);
+  background-color: var(--patient-container-background);
+  box-shadow: var(--patient-container-box-shadow);
+  border-radius: var(--patient-container-border-radius);
+  padding: var(--patient-container-padding);
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+#Searcher {
+  width: 100%;
+  background-color: var(--patient-container-background);
+  box-shadow: var(--patient-container-box-shadow);
+  border-radius: var(--patient-container-border-radius);
+  padding: var(--patient-container-padding);
+  display: flex;
+  justify-content: space-between;
+}
+
+#Searcher > select {
+  background-color: var(--patient-container-background);
+}
+
+#Searcher > button {
+  padding: 0 1em;
+  border: 0;
+  border-radius: var(--patient-container-border-radius);
+  box-shadow: var(--patient-container-box-shadow);
+  background-color: var(--patient-container-button-background);
+}
+
+#PatientReadAll {
+  width: min(100%, 600px);
+  height: 80%;
+  background-color: var(--patient-container-background);
+  box-shadow: var(--patient-container-box-shadow);
+  border-radius: var(--patient-container-border-radius);
+  padding: var(--patient-container-padding);
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  overflow: hidden scroll;
+  scrollbar-width: none;
+}
+
+.patient {
+  background-color: var(--patient-container-background);
+  box-shadow: var(--patient-container-box-shadow);
+  border-radius: var(--patient-container-border-radius);
+  padding: var(--patient-container-padding);
+  display: flex;
+  gap: 0.3em;
+  flex-direction: column;
+  transition: scale 0.5s ease-in-out 0s;
+}
+
+.patient .containerBtns {
+  margin-top: 1em;
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 1em;
+}
+
+.patient .containerBtns > button {
+  border: 0;
+  padding: 0.5em;
+  background-color: var(--patient-container-button-background);
+  box-shadow: var(--patient-container-box-shadow);
+  border-radius: var(--patient-container-button-border-radius);
+}
+
+.patient .containerBtns button:last-child {
+  background-color: var(--patient-container-button-background-red);
+}

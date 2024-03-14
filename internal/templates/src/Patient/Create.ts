@@ -5,14 +5,9 @@ import {
   handlerCleanDataToCreate,
 } from "../Components/Handlers/Change";
 import { handlerFetchCreate } from "../Components/Handlers/Fetch";
-import { $, $Button, $Input, $LabelAndInput } from "../Element/Element";
+import { $, $Button, $LabelAndInput } from "../Element/Element";
 import language from "../language";
 import { iCreate } from "./ports";
-import {
-  styleCreate,
-  styleCreateBtn,
-  styleCreateLabelAndInputContainer,
-} from "./styles";
 
 const nl = navigator.language;
 const jsonForLanguage = language[nl === "es" ? "es" : "en"];
@@ -36,22 +31,22 @@ export class Create extends $ implements iCreate {
     type: "text",
     name: "full_name",
     label: `${labels[0]}: `,
-  }).setStyle(styleCreateLabelAndInputContainer);
+  });
   $date_of_birth = new $LabelAndInput({
     type: "date",
     name: "date_of_birth",
     label: `${labels[1]}: `,
-  }).setStyle(styleCreateLabelAndInputContainer);
+  });
   $intern_now = new $LabelAndInput({
     type: "checkbox",
     name: "intern_now",
     label: `${labels[2]}: `,
-  }).setStyle(styleCreateLabelAndInputContainer);
+  });
   $pathologies = new $LabelAndInput({
     type: "text",
     name: "pathologies",
     label: `${labels[3]}: `,
-  }).setStyle(styleCreateLabelAndInputContainer);
+  });
   $btnCleanData = new $Button(
     {},
     `${buttons[1]}`,
@@ -59,7 +54,7 @@ export class Create extends $ implements iCreate {
       handlerCleanDataToCreate(this, data, ctx);
     },
     () => {}
-  ).setStyle(styleCreateBtn);
+  );
   $btnSendData = new $Button(
     {},
     `${buttons[0]}`,
@@ -68,16 +63,15 @@ export class Create extends $ implements iCreate {
       handlerFetchCreate(this, ctx, response);
     },
     () => {}
-  ).setStyle(styleCreateBtn);
+  );
   constructor() {
     super("article", { id: "PatientCreate" });
     this.render();
   }
   render() {
-    this.setStyle(styleCreate);
     this.$intern_now.input.setStyle({ width: "1.5em", height: "1.5em" });
     this.$intern_now.onChangeInput({
-      callBack: (ctx, e) => handlerChangeCheckBox(e,data),
+      callBack: (ctx, e) => handlerChangeCheckBox(e, data),
       backfn: () => {},
     });
     this.addChildren(

@@ -1,7 +1,12 @@
 import { styleDeclaration } from "../Element/Element";
 
+// Dark Mode
+// #262132    --> Background Main
+// #5c454577  --> Shadow
+// #ffffff0d  --> Background Transparent
+
 // CREATE
-export const styleCreate: styleDeclaration = {
+/* export const styleCreate: styleDeclaration = {
   width: "min(100%,600px)",
   height: "60%",
   background: "#00000004",
@@ -9,7 +14,7 @@ export const styleCreate: styleDeclaration = {
   borderRadius: "0.4rem",
   padding: "1em",
   display: "grid",
-};
+}; */
 export const styleCreateLabelAndInputContainer: styleDeclaration = {
   alignSelf: "center",
   display: "flex",
@@ -76,7 +81,7 @@ export const stylePatient: styleDeclaration = {
   borderRadius: "0.4rem",
   padding: "1em",
   display: "flex",
-  gap: '0.3em',
+  gap: "0.3em",
   flexDirection: "column",
   transition: "scale 0.5s ease-in-out 0s",
 };

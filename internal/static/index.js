@@ -303,116 +303,6 @@
     //valueToInput(value: any) {}
   };
 
-  // src/Patient/styles.ts
-  var styleCreate = {
-    width: "min(100%,600px)",
-    height: "60%",
-    background: "#00000004",
-    boxShadow: "0 0 3px #0007",
-    borderRadius: "0.4rem",
-    padding: "1em",
-    display: "grid"
-  };
-  var styleCreateLabelAndInputContainer = {
-    alignSelf: "center",
-    display: "flex",
-    justifyContent: "space-between",
-    padding: "0 4em"
-  };
-  var styleCreateBtn = {
-    width: "80%",
-    margin: "auto",
-    padding: "1em",
-    border: "0",
-    borderRadius: "0.2rem",
-    boxShadow: "0 0 3px #0008",
-    background: "#00f4"
-  };
-  var styleRead = {
-    width: "min(100%,600px)",
-    background: "#00000004",
-    boxShadow: "0 0 3px #0007",
-    borderRadius: "0.4rem",
-    padding: "1em",
-    display: "flex",
-    flexDirection: "column",
-    gap: "1em"
-  };
-  var styleReadSearcher = {
-    width: "100%",
-    background: "#00000004",
-    boxShadow: "0 0 3px #0007",
-    borderRadius: "0.4rem",
-    padding: "1em",
-    display: "flex",
-    justifyContent: "space-between"
-  };
-  var styleReadSearcherBtn = {
-    padding: "0 1em",
-    border: "0",
-    borderRadius: "0.2rem",
-    boxShadow: "0 0 3px #0008",
-    background: "#fff5"
-  };
-  var styleReadAll = {
-    width: "min(90%,600px)",
-    height: "80%",
-    background: "#00000004",
-    boxShadow: "0 0 3px #0007",
-    borderRadius: "0.4rem",
-    padding: "1em",
-    display: "flex",
-    flexDirection: "column",
-    gap: "1em",
-    overflowY: "scroll",
-    overflowX: "hidden"
-  };
-  var stylePatient = {
-    background: "#00000004",
-    boxShadow: "0 0 3px #0007",
-    borderRadius: "0.4rem",
-    padding: "1em",
-    display: "flex",
-    gap: "0.3em",
-    flexDirection: "column",
-    transition: "scale 0.5s ease-in-out 0s"
-  };
-  var stylePatientBtn = {
-    border: "0",
-    padding: "0.5em",
-    background: "#00000008",
-    boxShadow: "0 0 3px #00000080",
-    borderRadius: "0.2rem"
-  };
-  var stylePatientContainerBtns = {
-    marginTop: "1em",
-    display: "grid",
-    gridTemplateColumns: "auto auto",
-    gap: "1em"
-  };
-  var stylePatientInput = {
-    border: "0",
-    boxShadow: "0 0 3px #0006",
-    borderRadius: "0.2rem",
-    padding: "0.2rem"
-  };
-  var styleBtnActions = {
-    border: "0",
-    padding: "1em",
-    margin: "0.5em",
-    background: "#00000008",
-    boxShadow: "0 0 3px #00000040",
-    borderRadius: "0.2rem"
-  };
-  var styleSelectorContainer = {
-    background: "#00000008",
-    boxShadow: "0 0 3px #00000070",
-    borderRadius: "0.4rem",
-    display: "flex",
-    justifyContent: "center",
-    width: "99%"
-  };
-
   // src/language.ts
   var language_default = {
     "en": {
@@ -570,29 +460,26 @@
       (ctx) => handlerFetchDelete(this, ctx),
       () => {
       }
-    ).setStyle(stylePatientBtn);
+    );
     $btnSendData = new $Button(
       {},
       "Guardar",
       (ctx) => handlerFetchUpdate(this, ctx),
       () => {
       }
-    ).setStyle(stylePatientBtn);
+    );
     $btnUpdate = new $Button(
       {},
       "Actualizar",
       (_ctx) => handlerChangeToButtonUpdate(this),
       () => {
       }
-    ).setStyle(stylePatientBtn);
-    $containerBtns = new $("div", { class: "containerBtns-Patient" }).setStyle(
-      stylePatientContainerBtns
     );
+    $containerBtns = new $("div", { class: "containerBtns" });
     patient;
     constructor(patient2) {
       super("article", { class: "patient" });
       this.patient = patient2;
-      this.setStyle(stylePatient);
       this.render();
     }
     render() {
@@ -702,22 +589,22 @@
       type: "text",
       name: "full_name",
       label: `${labels[0]}: `
-    }).setStyle(styleCreateLabelAndInputContainer);
+    });
     $date_of_birth = new $LabelAndInput({
       type: "date",
       name: "date_of_birth",
       label: `${labels[1]}: `
-    }).setStyle(styleCreateLabelAndInputContainer);
+    });
     $intern_now = new $LabelAndInput({
       type: "checkbox",
       name: "intern_now",
       label: `${labels[2]}: `
-    }).setStyle(styleCreateLabelAndInputContainer);
+    });
     $pathologies = new $LabelAndInput({
       type: "text",
       name: "pathologies",
       label: `${labels[3]}: `
-    }).setStyle(styleCreateLabelAndInputContainer);
+    });
     $btnCleanData = new $Button(
       {},
       `${buttons[1]}`,
@@ -726,7 +613,7 @@
       },
       () => {
       }
-    ).setStyle(styleCreateBtn);
+    );
     $btnSendData = new $Button(
       {},
       `${buttons[0]}`,
@@ -736,13 +623,12 @@
       },
       () => {
       }
-    ).setStyle(styleCreateBtn);
+    );
     constructor() {
       super("article", { id: "PatientCreate" });
       this.render();
     }
     render() {
-      this.setStyle(styleCreate);
       this.$intern_now.input.setStyle({ width: "1.5em", height: "1.5em" });
       this.$intern_now.onChangeInput({
         callBack: (ctx, e) => handlerChangeCheckBox(e, data),
@@ -802,17 +688,16 @@
       (ctx) => handlerSearcherCleanData(this, ctx, data2),
       () => {
       }
-    ).setStyle(styleReadSearcherBtn).setStyle({ background: "#f005" });
+    ).setStyle({ backgroundColor: "#ff000061" });
     $btnSendData = new $Button(
       {},
       jFLSearch.buttons[0],
       (ctx) => handlerFetchSearcherRead(this, ctx, data2),
       () => {
       }
-    ).setStyle(styleReadSearcherBtn);
+    );
     constructor() {
-      super("div", {});
-      this.setStyle(styleReadSearcher);
+      super("article", { id: "Searcher" });
       this.addChildren(this.$typeSearch, this.$value, this.$btnSendData);
     }
   };
@@ -826,7 +711,6 @@
     $searcher = new Searcher();
     constructor() {
       super("article", { id: "PatientRead" });
-      this.setStyle(styleRead);
       this.addChildren(this.$title, this.$searcher);
     }
   };
@@ -840,16 +724,24 @@
     $title = new $("h3", {}).setText(jFLSearchAll.title);
     constructor() {
       super("article", { id: "PatientReadAll" });
-      this.setStyle(styleReadAll);
       this.addChild(this.$title);
     }
     loadData() {
+      this.removeAllChildren();
       const response = fetchReadAll();
       handlerFetchReadAll(this, response);
       return this;
     }
   };
   var ReadAll_default = new ReadAll();
+
+  // src/Patient/styles.ts
+  var stylePatientInput = {
+    border: "0",
+    boxShadow: "0 0 3px #0006",
+    borderRadius: "0.2rem",
+    padding: "0.2rem"
+  };
 
   // src/Components/Handlers/Change.ts
   var nl7 = navigator.language;
@@ -953,9 +845,13 @@
 
   // src/Components/BtnActions.ts
   function $BtnActions(text, attribute) {
-    let $btn = new $Button(attribute, text, handlerBtnActionsCallBack, handlerBtnActionsBackfn, true);
-    $btn.setStyle(styleBtnActions);
-    return $btn;
+    return new $Button(
+      attribute,
+      text,
+      handlerBtnActionsCallBack,
+      handlerBtnActionsBackfn,
+      true
+    );
   }
 
   // src/Components/SelectorContainer.ts
@@ -973,8 +869,7 @@
       value: "btnReadAll"
     });
     constructor() {
-      super("article", {});
-      this.setStyle(styleSelectorContainer);
+      super("article", { id: "SelectorContainer" });
       this.addChildren(this.$btnCreate, this.$btnRead, this.$btnReadAll);
     }
   };
@@ -982,20 +877,8 @@
 
   // src/app.ts
   var App = class extends $ {
-    style = {
-      width: "100vw",
-      height: "100vh",
-      display: "flex",
-      flexDirection: "column",
-      justifyContent: "start",
-      alignItems: "center",
-      overflow: "hidden",
-      gap: "3em",
-      paddingTop: "0.4%"
-    };
     constructor() {
       super("article", { id: "app" });
-      this.setStyle(this.style);
       this.addChildren(SelectorContainer_default);
     }
   };

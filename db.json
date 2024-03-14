@@ -1,276 +1,34 @@
 {
     "patients": [
         {
-            "full_name": "jose",
-            "birthday": "5/2/2010",
-            "status": 1,
-            "creation_date": "Wednesday, February 28, 2024 16:51:30",
-            "last_update": "Sunday, March 10, 2024 23:51:30",
-            "_id": 1,
-            "internment_date": "Thursday, February 29, 2024 00:47:35",
-            "pathologies": "[1,2,3]"
+            "full_name": "asdasdfasfd",
+            "birthday": "2024-03-11",
+            "internment_date": "Monday, March 11, 2024 05:55:17",
+            "pathologies": "[asdfasdfasdf]",
+            "status": 2,
+            "creation_date": "Monday, March 11, 2024 05:55:17",
+            "last_update": "Thursday, March 14, 2024 02:42:11",
+            "_id": 1
         },
         {
-            "full_name": "AM,DT",
-            "birthday": "5/2/2020",
+            "full_name": "bob",
+            "birthday": "2024-03-12",
+            "internment_date": "Tuesday, March 12, 2024 13:26:28",
+            "pathologies": "[]",
             "status": 1,
-            "creation_date": "Wednesday, February 28, 2024 16:52:33",
-            "last_update": "Wednesday, February 28, 2024 16:52:33",
+            "creation_date": "Tuesday, March 12, 2024 13:26:28",
+            "last_update": "Thursday, March 14, 2024 05:58:24",
             "_id": 2
         },
         {
-            "full_name": "maria",
-            "birthday": "5/2/2010",
+            "full_name": "pedro",
+            "birthday": "2024-03-14",
+            "internment_date": "Thursday, March 14, 2024 02:22:45",
+            "pathologies": "[kks,exp,aasdf]",
             "status": 1,
-            "creation_date": "Wednesday, February 28, 2024 16:54:39",
-            "last_update": "Wednesday, February 28, 2024 16:54:39",
+            "creation_date": "Thursday, March 14, 2024 02:22:45",
+            "last_update": "Thursday, March 14, 2024 02:22:45",
             "_id": 3
-        },
-        {
-            "full_name": "maria",
-            "birthday": "5/2/2010",
-            "pathologies": "[1,2,3]",
-            "status": 1,
-            "creation_date": "Wednesday, February 28, 2024 16:59:52",
-            "last_update": "Wednesday, February 28, 2024 16:59:52",
-            "_id": 4
-        },
-        {
-            "full_name": "maria",
-            "birthday": "5/2/2003",
-            "internment_date": "Wednesday, February 28, 2024 17:00:20",
-            "pathologies": "[1,2,3]",
-            "status": 1,
-            "creation_date": "Wednesday, February 28, 2024 17:00:20",
-            "last_update": "Wednesday, March 06, 2024 01:58:05",
-            "_id": 5
-        },
-        {
-            "full_name": "maria",
-            "birthday": "5/2/2010",
-            "internment_date": "Wednesday, February 28, 2024 18:15:54",
-            "pathologies": "[1,2,3]",
-            "status": 1,
-            "creation_date": "Wednesday, February 28, 2024 18:15:54",
-            "last_update": "Wednesday, February 28, 2024 18:15:54",
-            "_id": 6
-        },
-        {
-            "full_name": "maria",
-            "birthday": "5/2/2010",
-            "internment_date": "Wednesday, February 28, 2024 23:32:27",
-            "pathologies": "[1,2,3]",
-            "status": 1,
-            "creation_date": "Wednesday, February 28, 2024 23:32:27",
-            "last_update": "Wednesday, February 28, 2024 23:32:27",
-            "_id": 7
-        },
-        {
-            "full_name": "jose",
-            "birthday": "5/2/2010",
-            "internment_date": "Wednesday, February 28, 2024 23:57:11",
-            "pathologies": "[1,2,3]",
-            "status": 1,
-            "creation_date": "Wednesday, February 28, 2024 23:57:11",
-            "last_update": "Wednesday, February 28, 2024 23:57:11",
-            "_id": 8
-        },
-        {
-            "full_name": "maria",
-            "birthday": "5/2/2010",
-            "internment_date": "Saturday, March 02, 2024 15:59:16",
-            "pathologies": "[1,2,3]",
-            "status": 1,
-            "creation_date": "Saturday, March 02, 2024 15:59:16",
-            "last_update": "Saturday, March 02, 2024 15:59:16",
-            "_id": 9
-        },
-        {
-            "full_name": "maria",
-            "birthday": "2024-03-02",
-            "pathologies": "[lca,lcp]",
-            "status": 1,
-            "creation_date": "Saturday, March 02, 2024 15:59:32",
-            "last_update": "Saturday, March 02, 2024 15:59:32",
-            "_id": 10
-        },
-        {
-            "full_name": "mariasss12",
-            "birthday": "2024-03-02",
-            "pathologies": "[lca,lcp]",
-            "status": 1,
-            "creation_date": "Saturday, March 02, 2024 16:30:14",
-            "last_update": "Saturday, March 02, 2024 16:30:14",
-            "_id": 11
-        },
-        {
-            "full_name": "mariasss12123",
-            "birthday": "2024-03-02",
-            "pathologies": "[lca,lcp]",
-            "status": 1,
-            "creation_date": "Saturday, March 02, 2024 16:46:21",
-            "last_update": "Saturday, March 02, 2024 16:46:21",
-            "_id": 12
-        },
-        {
-            "full_name": "mariasss1212",
-            "pathologies": "[lca,lcp]",
-            "status": 1,
-            "creation_date": "Saturday, March 02, 2024 20:45:01",
-            "last_update": "Saturday, March 02, 2024 20:45:01",
-            "_id": 13
-        },
-        {
-            "full_name": "mariasss1",
-            "birthday": "2024-03-02",
-            "pathologies": "[lca,lcp]",
-            "status": 1,
-            "creation_date": "Saturday, March 02, 2024 20:48:31",
-            "last_update": "Saturday, March 02, 2024 20:48:31",
-            "_id": 14
-        },
-        {
-            "pathologies": "[]",
-            "status": 1,
-            "creation_date": "Saturday, March 02, 2024 21:02:46",
-            "last_update": "Saturday, March 02, 2024 21:02:46",
-            "_id": 15
-        },
-        {
-            "full_name": "pepe",
-            "birthday": "2024-03-02",
-            "pathologies": "[fractura en tibia derecha]",
-            "status": 1,
-            "creation_date": "Saturday, March 02, 2024 21:12:31",
-            "last_update": "Saturday, March 02, 2024 21:12:31",
-            "_id": 16
-        },
-        {
-            "full_name": "pepe",
-            "birthday": "2024-03-02",
-            "pathologies": "[fractura en tibia derecha]",
-            "status": 1,
-            "creation_date": "Saturday, March 02, 2024 21:17:16",
-            "last_update": "Saturday, March 02, 2024 21:17:16",
-            "_id": 17
-        },
-        {
-            "full_name": "pepe",
-            "pathologies": "[fractura en tibia derecha]",
-            "status": 1,
-            "creation_date": "Saturday, March 02, 2024 21:19:09",
-            "last_update": "Saturday, March 02, 2024 21:19:09",
-            "_id": 18
-        },
-        {
-            "full_name": "asdfas",
-            "pathologies": "[asdfasdfadsfasf]",
-            "status": 1,
-            "creation_date": "Saturday, March 02, 2024 21:21:12",
-            "last_update": "Saturday, March 02, 2024 21:21:12",
-            "_id": 19
-        },
-        {
-            "full_name": "asdf",
-            "pathologies": "[123f]",
-            "status": 1,
-            "creation_date": "Saturday, March 02, 2024 21:21:58",
-            "last_update": "Saturday, March 02, 2024 21:21:58",
-            "_id": 20
-        },
-        {
-            "full_name": "asdfasdfas",
-            "pathologies": "[q23rg]",
-            "status": 1,
-            "creation_date": "Saturday, March 02, 2024 21:26:13",
-            "last_update": "Saturday, March 02, 2024 21:26:13",
-            "_id": 21
-        },
-        {
-            "full_name": "asdfasdfas",
-            "pathologies": "[q23rg]",
-            "status": 1,
-            "creation_date": "Saturday, March 02, 2024 21:26:56",
-            "last_update": "Saturday, March 02, 2024 21:26:56",
-            "_id": 22
-        },
-        {
-            "full_name": "asdfasdfas",
-            "pathologies": "[q23rg]",
-            "status": 1,
-            "creation_date": "Saturday, March 02, 2024 21:27:19",
-            "last_update": "Saturday, March 02, 2024 21:27:19",
-            "_id": 23
-        },
-        {
-            "full_name": "jose jose",
-            "birthday": "2024-03-04",
-            "pathologies": "[leaef, asfasdf, asdfasfd]",
-            "status": 1,
-            "creation_date": "Monday, March 04, 2024 02:28:16",
-            "last_update": "Monday, March 04, 2024 02:28:16",
-            "_id": 24
-        },
-        {
-            "full_name": "asdfasdf",
-            "birthday": "2024-03-08",
-            "pathologies": "[sdfasdf]",
-            "status": 1,
-            "creation_date": "Friday, March 08, 2024 01:56:01",
-            "last_update": "Friday, March 08, 2024 01:56:01",
-            "_id": 25
-        },
-        {
-            "full_name": "asdfasdf",
-            "birthday": "2024-03-08",
-            "pathologies": "[12321312312]",
-            "status": 1,
-            "creation_date": "Friday, March 08, 2024 03:48:46",
-            "last_update": "Friday, March 08, 2024 03:48:46",
-            "_id": 26
-        },
-        {
-            "full_name": "asdfasdf",
-            "pathologies": "[12321312312]",
-            "status": 1,
-            "creation_date": "Friday, March 08, 2024 21:32:41",
-            "last_update": "Friday, March 08, 2024 21:32:41",
-            "_id": 27
-        },
-        {
-            "full_name": "sasfsdf",
-            "pathologies": "[123hhh]",
-            "status": 1,
-            "creation_date": "Sunday, March 10, 2024 10:07:02",
-            "last_update": "Sunday, March 10, 2024 10:07:02",
-            "_id": 28
-        },
-        {
-            "full_name": "asdfasf",
-            "pathologies": "[9j9asjo]",
-            "status": 1,
-            "creation_date": "Sunday, March 10, 2024 10:33:35",
-            "last_update": "Sunday, March 10, 2024 10:33:35",
-            "_id": 29
-        },
-        {
-            "full_name": "oqiewjfciaosndc",
-            "internment_date": "Sunday, March 10, 2024 23:33:25",
-            "pathologies": "[218u3ncasjc]",
-            "status": 1,
-            "creation_date": "Sunday, March 10, 2024 23:33:25",
-            "last_update": "Sunday, March 10, 2024 23:33:25",
-            "_id": 30
-        },
-        {
-            "full_name": "asdf",
-            "birthday": "2024-03-10",
-            "internment_date": "Sunday, March 10, 2024 23:37:18",
-            "pathologies": "[q23,asdf,asfasdf]",
-            "status": 1,
-            "creation_date": "Sunday, March 10, 2024 23:37:18",
-            "last_update": "Sunday, March 10, 2024 23:37:18",
-            "_id": 31
         }
     ]
 }
