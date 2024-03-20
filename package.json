@@ -1,0 +1,8 @@
+{
+	"scripts": {
+		"start": "python -m flask --app ./internal/server.py run --debug"
+	},
+	"dependencies": {
+		"flask": "^0.2.10"
+	}
+}
